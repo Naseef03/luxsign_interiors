@@ -61,3 +61,129 @@
         transform: translateY(-10px) translateX(-50%);
     }
 }
+
+/* =============================================================================================== */
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 50;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(26, 26, 26, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo img {
+    height: 4rem;
+    width: auto;
+}
+
+.nav-links {
+    display: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: #e5e5e5;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #d4af37;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -0.25rem;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #d4af37;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: #e5e5e5;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+    color: #d4af37;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+    .nav-links {
+        display: flex;
+    }
+    
+    .mobile-menu-btn {
+        display: none;
+    }
+}
+
+/* Mobile menu styles */
+@media (max-width: 767px) {
+    .nav-links {
+        position: fixed;
+        top: 5rem;
+        left: 0;
+        right: 0;
+        background-color: #1a1a1a;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-link {
+        padding: 0.75rem 1rem;
+        display: block;
+    }
+    
+    .mobile-menu-open {
+        padding-bottom: 1rem;
+    }
+}
