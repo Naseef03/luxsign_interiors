@@ -187,3 +187,88 @@
         padding-bottom: 1rem;
     }
 }
+
+/* Hero Section */
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #e5e5e5;
+    padding: 2rem 1rem;
+}
+
+.hero-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 10;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #d4af37;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.primary-btn, .secondary-btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border-radius: 0.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.primary-btn {
+    background-color: #d4af37;
+    color: #1a1a1a;
+}
+
+.primary-btn:hover {
+    background-color: rgba(212, 175, 55, 0.9);
+    transform: translateY(-1px);
+}
+
+.secondary-btn {
+    border: 2px solid #d4af37;
+    color: #d4af37;
+}
+
+.secondary-btn:hover {
+    background-color: rgba(212, 175, 55, 0.1);
+    transform: translateY(-1px);
+}
+
+@media (min-width: 768px) {
+    .hero h1 {
+        font-size: 4.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.5rem;
+    }
+}
